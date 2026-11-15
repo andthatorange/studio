@@ -520,3 +520,72 @@ html {
 }
 
 
+
+/* Studio journal, client notes, and the making of each project. */
+.extras-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.extras-eyebrow { font-family: "Special Elite", system-ui; font-size: .7rem; line-height: 1.6; margin-bottom: .8rem; }
+.extras-heading h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.25; text-wrap: balance; }
+.extras-description { margin-top: .8rem; max-width: 46ch; font-size: .9rem; line-height: 1.7; }
+.extras-text-link { flex-shrink: 0; text-decoration: underline; text-underline-offset: 5px; padding: .6rem 0; font-size: .8rem; }
+.extras-empty { padding: 1.5rem 0; border-top: 1px solid var(--line); font-size: .9rem; line-height: 1.8; }
+.extras-empty a { text-decoration: underline; text-underline-offset: 4px; }
+.social-post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.social-post-card { min-width: 0; display: block; }
+.social-post-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--line); background: #eadfd2; color: #800020; }
+.social-post-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.social-post-card:hover img, .social-post-card:focus-visible img { transform: scale(1.035); }
+.social-post-fallback { display: flex; align-items: center; justify-content: center; height: 100%; font-family: var(--font-display); font-size: 2rem; text-align: center; }
+.social-post-arrow { position: absolute; bottom: .75rem; right: .75rem; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; color: #800020; background: #f5efe6; }
+.social-post-card h3 { font-size: 1.2rem; margin-top: .9rem; }
+.social-post-card p { font-size: .85rem; line-height: 1.6; margin-top: .4rem; }
+.social-post-cta { display: inline-block; font-family: "Special Elite", system-ui; font-size: .65rem; margin-top: .8rem; text-decoration: underline; text-underline-offset: 4px; }
+.studio-review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.studio-review-card { margin: 0; padding: 2rem; background: #f5efe6; color: #211b18; border: 1px solid #d8c5ba; display: flex; flex-direction: column; min-width: 0; }
+.review-quotation { font-family: var(--font-display); color: #800020; font-size: 4rem; line-height: .8; margin-top: .5rem; }
+.studio-review-card blockquote { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.7; margin: .75rem 0 1.5rem; white-space: pre-line; overflow-wrap: anywhere; }
+.studio-review-card figcaption { margin-top: auto; display: flex; gap: .8rem; align-items: center; }
+.studio-review-card figcaption img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.review-author { font-size: .85rem; font-weight: 600; }
+.review-role { font-size: .75rem; color: #8b4544; margin-top: .2rem; }
+.review-project { display: inline-block; font-size: .7rem; margin-top: .5rem; color: #800020; }
+a.review-project { text-decoration: underline; text-underline-offset: 4px; }
+.case-extras { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.case-extras .extras-heading h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.case-extras .social-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-extras .studio-review-grid { grid-template-columns: 1fr; }
+.project-process-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.5rem; align-items: start; }
+.project-process-gallery figure { margin: 0; padding: .7rem .7rem 1rem; border: 1px solid #d8c5ba; background: #f5efe6; color: #211b18; }
+.project-process-gallery figure:nth-child(even) { transform: rotate(1deg); }
+.project-process-gallery figure a { display: block; }
+.project-process-gallery img { display: block; width: 100%; height: auto; }
+.project-process-gallery figcaption { padding: .8rem .3rem 0; }
+.project-process-gallery figcaption > span { font-family: "Special Elite", system-ui; font-size: .7rem; color: #800020; }
+.project-process-gallery figcaption p { font-size: .8rem; line-height: 1.7; margin-top: .35rem; }
+@media (max-width: 767px) {
+  .extras-heading { display: block; margin-bottom: 1.5rem; }
+  .extras-text-link { display: inline-block; margin-top: .75rem; min-height: 44px; }
+  .social-post-grid, .case-extras .social-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
+  .social-post-card h3 { font-size: 1rem; }
+  .social-post-fallback { font-size: 1.3rem; }
+  .social-post-card p { font-size: .8rem; }
+  .studio-review-grid, .project-process-gallery { grid-template-columns: 1fr; }
+  .studio-review-card { padding: 1.5rem; }
+  .case-extras { margin-top: 3rem; }
+  .project-process-gallery figure:nth-child(even) { transform: none; }
+}
+@media (max-width: 380px) {
+  .social-post-grid, .case-extras .social-post-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .social-post-image img { transition: none; } }
+
+/* Instagram supplies the post media; no separate uploaded cover is needed. */
+.social-embed-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 326px), 1fr)); align-items: start; gap: 1.5rem; }
+.instagram-embed { min-width: 0; width: 100%; }
+.instagram-embed-host { min-height: 400px; background: #fff; color: #211b18; border-radius: 4px; overflow: hidden; }
+.instagram-embed-host .instagram-media, .instagram-embed-host iframe { width: 100% !important; max-width: 100% !important; min-width: 0 !important; margin: 0 !important; border: 0 !important; }
+.instagram-embed-host blockquote { padding: 1.5rem; font-size: .85rem; }
+.instagram-embed-link { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; font-size: .75rem; text-decoration: underline; text-underline-offset: 4px; }
+.case-extras .social-embed-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 326px), 1fr)); }
+@media (max-width: 767px) {
+  .social-embed-grid, .case-extras .social-embed-grid { grid-template-columns: minmax(0, 1fr); }
+}

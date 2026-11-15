@@ -1,3 +1,6 @@
+import InstagramPosts from "@/components/InstagramPosts";
+import Reviews from "@/components/Reviews";
+import ProjectGallery from "@/components/ProjectGallery";
 ﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/content";
@@ -56,6 +59,10 @@ export default function CaseStudy({ params }) {
             <p className="mt-3 max-w-2xl text-muted">{t}</p>
           </section>
         ))}
+
+        <ProjectGallery images={p.gallery} title={p.title} />
+        <InstagramPosts projectSlug={p.slug} />
+        <Reviews projectSlug={p.slug} />
 
         {p.quote && (
           <blockquote className="mt-12 border-l-2 border-ink pl-5 text-xl">

@@ -1,3 +1,5 @@
+import InstagramPosts from "@/components/InstagramPosts";
+import Reviews from "@/components/Reviews";
 ﻿import Link from "next/link";
 import Packages from "@/components/Packages";
 import EnquiryForm from "@/components/EnquiryForm";
@@ -62,6 +64,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <InstagramPosts />
+      <Reviews />
       {/* FAQ: native details/summary, no JS needed */}
       <section id="faq" className="section bg-surface">
         <div className="wrap max-w-3xl">
