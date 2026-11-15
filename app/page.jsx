@@ -1,6 +1,6 @@
 import InstagramPosts from "@/components/InstagramPosts";
 import Reviews from "@/components/Reviews";
-﻿import Link from "next/link";
+import Link from "next/link";
 import Packages from "@/components/Packages";
 import EnquiryForm from "@/components/EnquiryForm";
 import Hero from "@/components/Hero";
@@ -9,12 +9,11 @@ import {
   hero,
   projects,
   process,
-  about,
   faq,
   enquire,
 } from "@/lib/content";
 import BeforeAfter from "@/components/BeforeAfter";
-import DoodlePencil from "@/components/DoodlePencil";
+import About from "@/components/About";
 import WorkScroll from "@/components/WorkScroll";
 // ...
 export default function Home() {
@@ -42,28 +41,7 @@ export default function Home() {
         </div>
       </section>
       {/* ABOUT */}
-      <section id="about" className="section border-t border-line relative">
-        <DoodlePencil />
-        <div className="wrap grid gap-10 md:grid-cols-2">
-          <div className="aspect-[4/5] bg-surface">
-            {about.photo && (
-              <img
-                src={about.photo}
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            )}
-          </div>
-          <div>
-            <h2 className="text-3xl md:text-4xl">{about.heading}</h2>
-            {about.body.map((t, i) => (
-              <p key={i} className="mt-4 text-muted">
-                {t}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
+      <About />
       <InstagramPosts />
       <Reviews />
       {/* FAQ: native details/summary, no JS needed */}
