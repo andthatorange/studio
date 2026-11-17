@@ -1,3 +1,5 @@
 .next
 node_modules
 .env.local
+/public/OCCT.exe
+/public/OCCT.config.json

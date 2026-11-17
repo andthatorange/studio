@@ -10,6 +10,8 @@
   --muted: #8b4544;
   --line: #dddddd;
   --accent: #111111;
+  --font-body: var(--font-display);
+  --font-note: "Special Elite";
 }
 
 body {
@@ -36,7 +38,7 @@ h3 {
   font-family: var(--font-display);
 }
 .headline {
-  font-family: "Special Elite", system-ui;
+  font-family: var(--font-note);
   font-weight: 400;
   font-style: normal;
 }
@@ -101,8 +103,19 @@ html {
   --line: #e2aaa4;
   --accent: #fff8ef;
 }
+/* Keep the project showcase on beige, independent of homepage section order. */
+.home-sections > #work {
+  --bg: #f5efe6;
+  --surface: #eadfd2;
+  --ink: #211b18;
+  --muted: #8b4544;
+  --line: #d5c6b8;
+  --accent: #211b18;
+  background-color: var(--bg);
+  color: var(--ink);
+}
 /* Cards keep their own readable cream palette inside the rose section. */
-#packages article {
+#packages .package-card {
   --bg: #f5efe6;
   --surface: #eadfd2;
   --ink: #211b18;
@@ -337,7 +350,7 @@ html {
   text-align: center;
 }
 .doodle-toolbar p { font-family: var(--font-display); line-height: 1.5; }
-.doodle-toolbar p span { font-family: "Special Elite", serif; font-size: .85rem; }
+.doodle-toolbar p span { font-family: var(--font-note); font-size: .85rem; }
 .doodle-controls { display: flex; justify-content: center; gap: .75rem; margin-top: .8rem; }
 .doodle-controls button { padding: .4rem 1rem; border: 1px solid #800020; border-radius: 999px; }
 .doodle-controls button:last-child { background: #800020; color: #f5efe6; }
@@ -350,14 +363,14 @@ html {
 .archive-back { font-size: .8rem; color: #8b4544; text-underline-offset: 4px; }
 .archive-back:hover { text-decoration: underline; }
 .archive-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; padding: 4.5rem 0 3.5rem; }
-.archive-eyebrow { font-family: "Special Elite", serif; font-size: .9rem; color: var(--archive-ink); }
+.archive-eyebrow { font-family: var(--font-note); font-size: .9rem; color: var(--archive-ink); }
 .archive-heading h1 { margin-top: 1rem; font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 1.13; letter-spacing: -.045em; max-width: 14ch; }
 .archive-heading h1 span { color: var(--archive-ink); }
 .archive-intro-note { color: #8b4544; font-size: .95rem; line-height: 1.7; padding-bottom: .4rem; }
 .archive-index { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid var(--archive-line); padding: 1.25rem 0; }
 .archive-index h2 { font-size: 1.15rem; }
-.archive-index h2 span { font-family: "Special Elite", serif; font-size: .8rem; color: #8b4544; margin-left: .4rem; }
-.archive-handnote { font-family: "Special Elite", serif; color: #8b4544; font-size: .8rem; }
+.archive-index h2 span { font-family: var(--font-note); font-size: .8rem; color: #8b4544; margin-left: .4rem; }
+.archive-handnote { font-family: var(--font-note); color: #8b4544; font-size: .8rem; }
 .archive-gallery { padding-top: 1.5rem; padding-bottom: 6rem; }
 .archive-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; row-gap: 3.5rem; align-items: start; }
 .archive-card:nth-child(even) { margin-top: 5rem; }
@@ -373,7 +386,7 @@ html {
 .archive-project-link:hover img { filter: saturate(1.1); }
 .archive-cover-fallback { aspect-ratio: 4 / 3; display: grid; place-items: center; font-family: var(--font-display); font-size: 2rem; background: #f5efe6; }
 .archive-caption { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .85rem; padding: 1.25rem .15rem 0; }
-.archive-number { font-family: "Special Elite", serif; font-size: .75rem; color: #8b4544; }
+.archive-number { font-family: var(--font-note); font-size: .75rem; color: #8b4544; }
 .archive-caption h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); }
 .archive-caption p { margin-top: .4rem; font-size: .85rem; line-height: 1.6; color: #8b4544; max-width: 33ch; }
 .archive-year { font-size: .75rem; color: #8b4544; }
@@ -400,7 +413,7 @@ html {
 /* A warm studio sign-off, with the same floral artwork as the opener. */
 .studio-footer { position: relative; isolation: isolate; overflow: hidden; background: #f5efe6; color: #800020; border-top: 1px solid #d8c5ba; padding-top: 4rem; }
 .footer-top { display: grid; grid-template-columns: minmax(0, 2fr) 1fr 1fr; gap: 4rem; }
-.footer-kicker { font-family: "Special Elite", serif; font-size: .75rem; margin-bottom: 1rem; }
+.footer-kicker { font-family: var(--font-note); font-size: .75rem; margin-bottom: 1rem; }
 .footer-intro h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.25; }
 .footer-intro > p:not(.footer-kicker) { font-size: .85rem; line-height: 1.7; max-width: 34ch; margin-top: 1rem; color: #8b4544; }
 .footer-contact { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 24rem; border-bottom: 1px solid #b58b86; padding: .9rem 0; margin-top: .8rem; font-size: .85rem; }
@@ -412,7 +425,7 @@ html {
 .footer-availability { margin-top: 1rem; max-width: 18ch; font-size: .75rem; line-height: 1.6; }
 .footer-availability > span { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #59764a; margin-right: .4rem; }
 .footer-wordmark { font-family: var(--font-display); display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 4rem 0 2rem; font-size: clamp(3rem, 7.5vw, 7rem); line-height: 1.2; letter-spacing: -.05em; }
-.footer-wordmark i { font-family: "Special Elite", serif; font-size: .32em; letter-spacing: -.04em; font-weight: 400; }
+.footer-wordmark i { font-family: var(--font-note); font-size: .32em; letter-spacing: -.04em; font-weight: 400; }
 .footer-flower { display: inline-block; font-size: .55em; margin-left: .2em; vertical-align: top; }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid #d8c5ba; font-size: .7rem; color: #8b4544; }
 .footer-garden { height: clamp(100px, 16vw, 220px); background: url("/hero.jpg") right 55% / auto 220% no-repeat, url("/hero.jpg") left 55% / auto 220% no-repeat; mix-blend-mode: multiply; opacity: .85; }
@@ -441,8 +454,8 @@ html {
   select.field { max-width: 100%; }
   #enquire form > div { min-width: 0; }
   #enquire form button[type="submit"] { width: 100%; min-height: 48px; }
-  #packages article { padding: 1.4rem; }
-  #packages article > .btn { margin-top: 1.5rem; width: 100%; text-align: center; }
+  #packages .package-card { padding: 1.4rem; }
+
   #before-after th, #before-after td { padding: .85rem .6rem; font-size: .85rem; overflow-wrap: anywhere; }
   #before-after table { table-layout: fixed; }
   #faq summary { min-height: 44px; padding-right: .5rem; font-size: 1rem; }
@@ -485,31 +498,31 @@ html {
 }
 
 /* Scattered thoughts become a clear, considered home on the web. */
-.comparison-eyebrow { font-family: "Special Elite", serif; font-size: .75rem; margin-bottom: 1rem; }
+.comparison-eyebrow { font-family: var(--font-note); font-size: .75rem; margin-bottom: 1rem; }
 .comparison-heading { font-size: clamp(1.9rem, 3.7vw, 3rem); max-width: 23ch; line-height: 1.25; text-wrap: balance; }
 .comparison-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }
 .comparison-before, .comparison-after { position: relative; min-width: 0; padding: 2rem; border-radius: 3px; }
 .comparison-before { background: #eedfd1; color: #800020; transform: rotate(-1deg); box-shadow: 1px 4px 0 #843f3e25; }
 .comparison-after { background: #f5efe6; color: #211b18; border: 1px solid #d8c5ba; }
 .comparison-label { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; font-size: 1.5rem; }
-.comparison-label > span { font-family: "Special Elite", serif; font-size: .65rem; color: #8b4544; }
+.comparison-label > span { font-family: var(--font-note); font-size: .65rem; color: #8b4544; }
 .comparison-notes { list-style: none; display: grid; gap: 1.8rem; margin: 2rem 0 1rem; padding: .5rem 0 2rem; }
 .comparison-notes li { display: flex; align-items: baseline; gap: .5rem; padding-right: .6rem; transform: rotate(-4deg); }
 .comparison-notes li:nth-child(2) { margin-left: 1.5rem; transform: rotate(3deg); }
 .comparison-notes li:nth-child(3) { margin-left: .5rem; transform: rotate(-2deg); }
 .comparison-notes li:nth-child(4) { margin-left: 2rem; transform: rotate(4deg); }
-.comparison-note-number { flex-shrink: 0; font-family: "Special Elite", serif; font-size: .6rem; opacity: .8; }
-.comparison-note-text { position: relative; font-family: "Special Elite", system-ui; font-weight: 400; font-style: normal; font-size: clamp(1.6rem, 2.8vw, 2rem); line-height: 1.1; overflow-wrap: anywhere; }
+.comparison-note-number { flex-shrink: 0; font-family: var(--font-note); font-size: .6rem; opacity: .8; }
+.comparison-note-text { position: relative; font-family: var(--font-note); font-weight: 400; font-style: normal; font-size: clamp(1.6rem, 2.8vw, 2rem); line-height: 1.1; overflow-wrap: anywhere; }
 .comparison-notes li:nth-child(1) .comparison-note-text::after { content: ""; position: absolute; inset: -6px -7px; border: 1px solid #80002080; border-radius: 50% 40% 48% 44%; transform: rotate(3deg); pointer-events: none; }
 .comparison-notes li:nth-child(3) .comparison-note-text { text-decoration: underline wavy #80002070; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .comparison-scribble { position: absolute; bottom: .8rem; right: 1.25rem; width: 95px; opacity: .8; }
 .comparison-scribble svg { width: 100%; }
 .comparison-organized { list-style: none; padding: 0; margin-top: 1.75rem; }
 .comparison-organized li { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: .85rem; min-height: 5.25rem; padding: 1rem 0; border-bottom: 1px solid #d8c5ba; }
-.comparison-order { font-family: "Special Elite", serif; color: #8b4544; font-size: .7rem; }
+.comparison-order { font-family: var(--font-note); color: #8b4544; font-size: .7rem; }
 .comparison-organized p { font-size: .95rem; line-height: 1.6; }
 .comparison-check { color: #800020; }
-.comparison-signoff { font-family: "Special Elite", serif; color: #8b4544; font-size: .65rem; margin-top: 1.5rem; line-height: 1.6; }
+.comparison-signoff { font-family: var(--font-note); color: #8b4544; font-size: .65rem; margin-top: 1.5rem; line-height: 1.6; }
 @media (max-width: 767px) {
   .comparison-panels { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
   .comparison-before, .comparison-after { padding: 1.5rem; }
@@ -523,7 +536,7 @@ html {
 
 /* Studio journal, client notes, and the making of each project. */
 .extras-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
-.extras-eyebrow { font-family: "Special Elite", system-ui; font-size: .7rem; line-height: 1.6; margin-bottom: .8rem; }
+.extras-eyebrow { font-family: var(--font-note); font-size: .7rem; line-height: 1.6; margin-bottom: .8rem; }
 .extras-heading h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.25; text-wrap: balance; }
 .extras-description { margin-top: .8rem; max-width: 46ch; font-size: .9rem; line-height: 1.7; }
 .extras-text-link { flex-shrink: 0; text-decoration: underline; text-underline-offset: 5px; padding: .6rem 0; font-size: .8rem; }
@@ -538,7 +551,7 @@ html {
 .social-post-arrow { position: absolute; bottom: .75rem; right: .75rem; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; color: #800020; background: #f5efe6; }
 .social-post-card h3 { font-size: 1.2rem; margin-top: .9rem; }
 .social-post-card p { font-size: .85rem; line-height: 1.6; margin-top: .4rem; }
-.social-post-cta { display: inline-block; font-family: "Special Elite", system-ui; font-size: .65rem; margin-top: .8rem; text-decoration: underline; text-underline-offset: 4px; }
+.social-post-cta { display: inline-block; font-family: var(--font-note); font-size: .65rem; margin-top: .8rem; text-decoration: underline; text-underline-offset: 4px; }
 .studio-review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .studio-review-card { margin: 0; padding: 2rem; background: #f5efe6; color: #211b18; border: 1px solid #d8c5ba; display: flex; flex-direction: column; min-width: 0; }
 .review-quotation { font-family: var(--font-display); color: #800020; font-size: 4rem; line-height: .8; margin-top: .5rem; }
@@ -559,7 +572,7 @@ a.review-project { text-decoration: underline; text-underline-offset: 4px; }
 .project-process-gallery figure a { display: block; }
 .project-process-gallery img { display: block; width: 100%; height: auto; }
 .project-process-gallery figcaption { padding: .8rem .3rem 0; }
-.project-process-gallery figcaption > span { font-family: "Special Elite", system-ui; font-size: .7rem; color: #800020; }
+.project-process-gallery figcaption > span { font-family: var(--font-note); font-size: .7rem; color: #800020; }
 .project-process-gallery figcaption p { font-size: .8rem; line-height: 1.7; margin-top: .35rem; }
 @media (max-width: 767px) {
   .extras-heading { display: block; margin-bottom: 1.5rem; }
@@ -596,32 +609,32 @@ a.review-project { text-decoration: underline; text-underline-offset: 4px; }
 .about-visual, .about-story { min-width: 0; }
 .about-photo-card { position: relative; margin: 0; padding: .8rem .8rem 0; background: #f5efe6; color: #800020; box-shadow: 0 10px 30px #211b1818; transform: rotate(-2deg); }
 .about-photo-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 85%; }
-.about-photo-card figcaption { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem .25rem 1.1rem; font-family: "Special Elite", system-ui; font-size: .7rem; line-height: 1.6; }
+.about-photo-card figcaption { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem .25rem 1.1rem; font-family: var(--font-note); font-size: .7rem; line-height: 1.6; }
 .about-photo-card figcaption > span { font-size: 1.6rem; line-height: 1; }
 .about-tape { position: absolute; width: 100px; height: 27px; background: #e8d5b9b8; top: -12px; left: calc(50% - 50px); transform: rotate(5deg); border-left: 2px dotted #f5efe680; border-right: 2px dotted #f5efe680; }
-.about-personal-note { display: flex; justify-content: center; align-items: center; gap: .75rem; margin: 1.75rem 1rem 0; font-family: "Special Elite", system-ui; font-size: .75rem; line-height: 1.7; text-align: center; }
+.about-personal-note { display: flex; justify-content: center; align-items: center; gap: .75rem; margin: 1.75rem 1rem 0; font-family: var(--font-note); font-size: .75rem; line-height: 1.7; text-align: center; }
 .about-note-star { font-size: 1.5rem; flex-shrink: 0; }
-.about-eyebrow { font-family: "Special Elite", system-ui; font-size: .7rem; line-height: 1.7; margin-bottom: 1rem; }
+.about-eyebrow { font-family: var(--font-note); font-size: .7rem; line-height: 1.7; margin-bottom: 1rem; }
 .about-story h2 { font-size: clamp(2.2rem, 4.8vw, 4rem); line-height: 1.15; letter-spacing: -.035em; text-wrap: balance; }
 .about-copy { margin-top: 1.5rem; max-width: 52ch; }
 .about-copy p { font-size: .95rem; line-height: 1.85; }
 .about-copy p + p { margin-top: 1rem; }
 .about-copy p.about-lead { font-size: 1.1rem; line-height: 1.75; }
 .about-principles { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
-.about-principles h3 { font-family: "Special Elite", system-ui; font-weight: 400; font-size: .7rem; margin-bottom: 1rem; }
+.about-principles h3 { font-family: var(--font-note); font-weight: 400; font-size: .7rem; margin-bottom: 1rem; }
 .about-principles dl { display: grid; gap: 1rem; }
 .about-principles dt { display: flex; align-items: baseline; gap: .7rem; font-size: .85rem; font-weight: 600; }
-.about-principles dt span { font-family: "Special Elite", system-ui; font-size: .6rem; font-weight: 400; }
+.about-principles dt span { font-family: var(--font-note); font-size: .6rem; font-weight: 400; }
 .about-principles dd { padding-left: 1.6rem; margin-top: .25rem; font-size: .8rem; line-height: 1.7; }
 .about-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; }
 .about-primary-link { display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; padding: .85rem 1.25rem; border-radius: 999px; background: #f5efe6; color: #800020; border: 1px solid #d8c5ba; min-height: 48px; font-size: .8rem; }
 .about-primary-link:hover { background: #eadfd2; }
 .about-secondary-link { font-size: .8rem; text-decoration: underline; text-underline-offset: 5px; padding: .7rem 0; }
 .about-signature-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2rem; }
-.about-signature { font-family: "Special Elite", system-ui; font-size: .65rem; line-height: 1.7; }
+.about-signature { font-family: var(--font-note); font-size: .65rem; line-height: 1.7; }
 .about-signature span { display: block; font-family: var(--font-display); font-size: 1.65rem; margin-top: .25rem; }
 .about-pencil-discovery { max-width: 15rem; text-align: right; }
-.about-pencil-hint { display: block; font-family: "Special Elite", system-ui; font-size: .6rem; line-height: 1.6; }
+.about-pencil-hint { display: block; font-family: var(--font-note); font-size: .6rem; line-height: 1.6; }
 .about-pencil-slot { position: relative; height: 60px; width: 110px; margin-left: auto; }
 .about-pencil-slot .doodle-pencil { right: 0; top: .4rem; }
 @media (max-width: 767px) {
@@ -638,4 +651,183 @@ a.review-project { text-decoration: underline; text-underline-offset: 4px; }
   .about-primary-link { width: 100%; }
   .about-secondary-link { display: flex; align-items: center; justify-content: center; min-height: 44px; width: 100%; }
   .about-signature-row { margin-top: 1.5rem; }
+}
+
+/* Standalone pages reuse the same sections and content as the homepage. */
+.section-page { background: #f5efe6; color: #211b18; --ink: #211b18; --muted: #8b4544; --line: #d8c5ba; }
+.section-page-intro { padding-top: 2rem; padding-bottom: 3rem; border-bottom: 1px solid #d8c5ba; }
+.section-page-kicker { margin-top: 3rem; font-family: var(--font-note); font-size: .7rem; color: #8b4544; }
+.section-page-intro h1 { max-width: 19ch; margin-top: 1rem; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 1.15; letter-spacing: -.035em; text-wrap: balance; }
+.section-page-description { margin-top: 1.25rem; max-width: 54ch; color: #8b4544; line-height: 1.8; font-size: .95rem; }
+.section-page-content > section { background: #f5efe6; color: #211b18; }
+.section-page-content > .comparison, .section-page-content > .about-studio { --line: #d8c5ba; background: #be5f5e; color: #fff8ef; }
+.section-page-nav { padding-top: 2.5rem; padding-bottom: 3rem; border-top: 1px solid #d8c5ba; }
+.section-page-nav > p { font-family: var(--font-note); font-size: .75rem; color: #8b4544; margin-bottom: 1rem; }
+.section-page-nav > div { display: flex; flex-wrap: wrap; gap: .75rem; }
+.section-page-nav a { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 44px; padding: .6rem 1rem; border: 1px solid #d8c5ba; border-radius: 999px; font-size: .8rem; }
+.section-page-nav a[aria-current="page"] { background: #800020; color: #f5efe6; border-color: #800020; }
+.section-route-link { display: flex; justify-content: flex-end; margin-top: 2rem; }
+.section-route-link a { display: inline-flex; align-items: center; gap: 1rem; min-height: 44px; font-size: .8rem; text-decoration: underline; text-underline-offset: 5px; }
+.section-page .section-route-link { display: none; }
+.social-post-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 767px) {
+  .section-page-intro { padding-bottom: 2rem; }
+  .section-page-kicker { margin-top: 2rem; }
+  .section-page-nav > div { gap: .5rem; }
+  .section-page-nav a { flex: 1 0 40%; }
+}
+
+.services-overview h2 { font-size: clamp(1.8rem, 3.7vw, 3rem); line-height: 1.25; max-width: 24ch; text-wrap: balance; }
+.services-overview-intro { max-width: 57ch; line-height: 1.8; margin-top: 1rem; font-size: .95rem; }
+.services-overview-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.services-overview-grid article { padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: flex-start; }
+.service-number { font-family: var(--font-note); font-size: .7rem; }
+.services-overview-grid h3 { font-size: 1.5rem; margin-top: 1rem; }
+.services-overview-grid p { font-size: .9rem; line-height: 1.8; margin: .75rem 0 1rem; }
+.services-overview-grid article > a { display: inline-flex; align-items: center; gap: 1rem; font-size: .8rem; text-decoration: underline; text-underline-offset: 5px; padding: .5rem 0; margin-top: auto; }
+.services-overview-next { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-top: 2.5rem; }
+.services-overview-next h3 { font-size: 1.25rem; }
+.services-overview-next p { font-size: .85rem; line-height: 1.7; max-width: 44ch; margin-top: .5rem; }
+.services-overview-next > div:last-child { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.journey-primary-link { display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; min-height: 48px; padding: .85rem 1.25rem; background: #800020; color: #f5efe6; border-radius: 999px; font-size: .8rem; }
+.journey-secondary-link { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 5px; font-size: .8rem; }
+#packages .package-card[id] { scroll-margin-top: 2rem; }
+@media (max-width: 767px) {
+  .services-overview-grid { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .services-overview-next { display: block; }
+  .services-overview-next > div:last-child { margin-top: 1.25rem; }
+  .services-overview-next .journey-primary-link { width: 100%; }
+}
+
+.enquiry-next-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.75rem 0 2rem; padding: 1.25rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.enquiry-next-steps li { display: flex; align-items: baseline; gap: .6rem; }
+.enquiry-next-steps li > span { font-family: var(--font-note); font-size: .7rem; }
+.enquiry-next-steps h3 { font-size: 1rem; }
+.enquiry-next-steps p { font-size: .75rem; line-height: 1.7; margin-top: .4rem; }
+.enquiry-extra { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.enquiry-extra summary { padding: 1rem 0; min-height: 48px; font-size: .9rem; }
+.enquiry-extra summary span { font-size: .75rem; }
+.enquiry-extra-fields { padding: .5rem 0 1.5rem; }
+.enquiry-form-note { font-size: .75rem; line-height: 1.7; margin-top: .75rem; }
+.enquiry-email-link { display: inline-block; padding: .6rem 0; margin-top: .4rem; font-size: .8rem; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.enquiry-confirmation { padding: 2rem; border: 1px solid var(--line); }
+.enquiry-confirmation h3 { font-size: 1.75rem; }
+.enquiry-confirmation p { margin-top: 1rem; line-height: 1.8; }
+.enquiry-confirmation a { display: inline-block; margin-top: 1rem; text-decoration: underline; overflow-wrap: anywhere; }
+@media (max-width: 767px) { .enquiry-next-steps { grid-template-columns: 1fr; } .enquiry-short-form input, .enquiry-short-form textarea, .enquiry-short-form select { font-size: 16px; } }
+
+.booking-prompt { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 2rem; background: #eadfd2; color: #211b18; margin: 3rem 0; border: 1px solid #d8c5ba; }
+.booking-prompt h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.35; max-width: 28ch; }
+.booking-prompt p { font-size: .9rem; line-height: 1.8; margin-top: .75rem; max-width: 48ch; }
+.booking-prompt > a { flex-shrink: 0; }
+@media (max-width: 767px) { .booking-prompt { display: block; padding: 1.5rem; } .booking-prompt > a { display: flex; margin-top: 1.25rem; width: 100%; } }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .site-header .wrap { gap: 1rem; }
+  .site-header nav { gap: 1rem; font-size: .85rem; }
+  .site-header .site-brand { max-width: 13rem; font-size: 1rem; }
+  .site-header .header-enquire { font-size: .75rem; padding: .75rem 1rem; }
+}
+
+
+/* The homepage overview inherits rose/cream; only detailed cards reset to beige. */
+.home-sections > #packages.services-overview {
+  --bg: #be5f5e;
+  --surface: #a34c4b;
+  --ink: #fff8ef;
+  --muted: #fff8ef;
+  --line: #e2aaa4;
+  --accent: #fff8ef;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+.services-overview .journey-primary-link {
+  background: #f5efe6;
+  color: #800020;
+}
+
+
+/* One client, one page. A quiet guestbook with real page turns. */
+.studio-reviews.review-book-section { padding-top: 7rem; padding-bottom: 7rem; }
+.review-book-section .extras-heading { justify-content: center; text-align: center; margin-bottom: 3.5rem; }
+.review-book-section .extras-description { margin-left: auto; margin-right: auto; }
+.review-book-reader { max-width: 1050px; margin: 0 auto; color: var(--ink); }
+.review-book { display: grid; grid-template-columns: .8fr 1.2fr; padding: 12px; border-radius: 8px 16px 16px 8px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 16px 40px color-mix(in srgb, var(--ink) 6%, transparent), 0 2px 3px color-mix(in srgb, var(--ink) 8%, transparent); position: relative; }
+.review-book::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 6px; height: 4px; border-bottom: 1px solid var(--line); pointer-events: none; }
+.review-book-inside-cover { position: relative; padding: clamp(1.75rem, 4vw, 3.5rem); background: var(--surface); border-radius: 2px 0 0 2px; box-shadow: inset -14px 0 20px -20px var(--ink); display: flex; flex-direction: column; align-items: flex-start; }
+.review-book-edition { font-size: .6rem; letter-spacing: .04em; line-height: 1.7; }
+.review-book-heart { width: 55px; height: 50px; margin-top: 2.75rem; }
+.review-book-cover-title { font-family: var(--font-display); font-size: clamp(1.7rem, 3.3vw, 2.7rem); line-height: 1.35; margin-top: 1rem; }
+.review-book-cover-title em { font-style: normal; }
+.review-book-cover-note { font-size: .7rem; line-height: 1.9; margin-top: 1.5rem; }
+.review-book-index { display: grid; gap: .2rem; width: 100%; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.review-book-index button { display: flex; align-items: center; gap: .8rem; min-height: 36px; padding: .35rem 0; font-size: .7rem; text-align: left; opacity: .7; }
+.review-book-index button span { font-size: .55rem; }
+.review-book-index button[aria-current="page"] { opacity: 1; text-decoration: underline; text-underline-offset: 5px; }
+.review-book-stage { position: relative; perspective: 1600px; min-width: 0; touch-action: pan-y; border-left: 1px solid var(--line); }
+.review-book-page, .review-book-turn { background: var(--bg); box-shadow: inset 18px 0 22px -22px color-mix(in srgb, var(--ink) 30%, transparent); }
+.review-book-page { min-height: 100%; }
+.review-leaf-content { padding: clamp(1.5rem, 4vw, 3.5rem); min-height: 590px; height: 100%; display: flex; flex-direction: column; }
+.review-leaf-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: .6rem; line-height: 1.7; }
+.review-leaf-header > span:last-child { font-size: 1.35rem; }
+.review-book-quote { display: flex; flex-direction: column; flex: 1; justify-content: center; margin: 2rem 0; }
+.review-book-quote-mark { font-family: var(--font-display); font-size: 3rem; line-height: 1; opacity: .65; }
+.review-book-quote blockquote { font-family: var(--font-display); font-size: clamp(.95rem, 1.6vw, 1.15rem); line-height: 1.95; white-space: pre-line; overflow-wrap: anywhere; }
+.review-book-quote figcaption { display: flex; align-items: center; gap: .75rem; margin-top: 2rem; }
+.review-book-quote figcaption img { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; }
+.review-book-quote figcaption p { font-size: .75rem; }
+.review-book-quote figcaption span { display: block; font-size: .6rem; line-height: 1.8; margin-top: .35rem; }
+.review-leaf-footer { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: .75rem; font-size: .6rem; line-height: 1.8; }
+.review-leaf-footer a { padding: .4rem 0; text-decoration: underline; text-underline-offset: 4px; }
+.review-book-turn { position: absolute; inset: 0; z-index: 2; transform-origin: left center; backface-visibility: hidden; pointer-events: none; }
+.review-book-turn--forward { animation: review-page-forward .7s cubic-bezier(.45, .05, .3, 1) both; }
+.review-book-turn--back { animation: review-page-back .7s cubic-bezier(.45, .05, .3, 1) both; }
+@keyframes review-page-forward { from { transform: rotateY(0); } to { transform: rotateY(-180deg); } }
+@keyframes review-page-back { from { transform: rotateY(-180deg); } to { transform: rotateY(0); } }
+.review-book-controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.75rem; font-size: .7rem; }
+.review-book-controls button { min-height: 44px; display: inline-flex; align-items: center; gap: .6rem; padding: .5rem .75rem; border: 1px solid var(--line); border-radius: 999px; }
+.review-book-controls button:disabled { opacity: .3; cursor: default; }
+.review-book-controls p { text-align: center; line-height: 1.7; }
+.review-book-help { text-align: center; font-size: .6rem; line-height: 1.8; margin-top: 1rem; }
+.review-book-section .section-route-link { margin-top: 2.5rem; justify-content: center; }
+button, input, select, textarea { font-family: inherit; }
+@media (max-width: 767px) {
+  .studio-reviews.review-book-section { padding-top: 4rem; padding-bottom: 4rem; }
+  .review-book-section .extras-heading { margin-bottom: 2rem; }
+  .review-book { grid-template-columns: minmax(0, 1fr); padding: 8px 8px 12px 13px; }
+  .review-book-inside-cover { display: none; }
+  .review-book::before { content: ""; position: absolute; top: 8px; bottom: 10px; left: 7px; border-left: 1px solid var(--line); }
+  .review-leaf-content { min-height: 560px; padding: 1.75rem 1.5rem; }
+  .review-book-quote blockquote { font-size: 1rem; line-height: 1.9; }
+  .review-book-controls { gap: .5rem; }
+  .review-book-controls button { font-size: .65rem; }
+  .review-book-controls p { font-size: .6rem; }
+}
+@media (prefers-reduced-motion: reduce) { .review-book-turn { animation: none; } }
+
+
+/* Milonga carries the reading; Special Elite marks the little notes. */
+.review-book-edition,
+.review-book-cover-note,
+.review-book-index,
+.review-leaf-header,
+.review-leaf-footer,
+.review-book-controls,
+.review-book-help,
+.review-book-quote figcaption {
+  font-family: var(--font-note);
+}
+
+/* Keep package actions compact, aligned, and clear of the last list. */
+.package-card-action { margin-top: auto; padding-top: 1.75rem; }
+#packages .package-enquire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  padding: .6rem .9rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  text-align: center;
 }

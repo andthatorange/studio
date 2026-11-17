@@ -10,7 +10,7 @@ export default function Header() {
         <nav className="hidden gap-6 md:flex" aria-label="Main">
           {nav.map((n) => <Link key={n.href} href={n.href === "/#work" ? "/work" : n.href}>{n.label}</Link>)}
         </nav>
-        <Link href="/#enquire" className="header-enquire btn">Enquire</Link>
+        <Link href="/enquire" className="header-enquire btn">Tell me about your project</Link>
         <MobileMenu />
       </div>
     </header>

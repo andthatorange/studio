@@ -1,3 +1,4 @@
+﻿import BookingPrompt from "@/components/BookingPrompt";
 import InstagramPosts from "@/components/InstagramPosts";
 import Reviews from "@/components/Reviews";
 import ProjectGallery from "@/components/ProjectGallery";
@@ -75,6 +76,8 @@ export default function CaseStudy({ params }) {
           </a>
         )}
 
+        <BookingPrompt />
+
         <div className="mt-16 border-t border-line pt-6">
           <Link href={`/work/${next.slug}`}>Next: {next.title}</Link>
         </div>
@@ -82,6 +85,7 @@ export default function CaseStudy({ params }) {
     </article>
   );
 }
+
 
 
 

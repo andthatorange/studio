@@ -1,5 +1,6 @@
-﻿import Image from "next/image";
-import { instagram, projects, site } from "@/lib/content";
+﻿import SectionLink from "@/components/SectionLink";
+﻿import SocialPostImage from "@/components/SocialPostImage";
+import { instagram, site } from "@/lib/content";
 
 function postUrl(value) {
   try {
@@ -26,7 +27,7 @@ function postUrl(value) {
   }
 }
 
-// "reel" and "carousel" can be set per post in content.ts. Otherwise we guess from the link.
+// "reel" and "carousel" can be set per post in content.js. Otherwise we guess from the link.
 function postType(post) {
   if (post.type) return post.type;
   if (post.href.includes("/reel/")) return "reel";
@@ -261,9 +262,7 @@ export default function InstagramPosts({ projectSlug }) {
     .map((post) => ({
       ...post,
       href: postUrl(post.url),
-      // No image set? Reuse the linked project's cover, so nothing needs exporting.
-      image:
-        post.image || projects.find((p) => p.slug === post.projectSlug)?.image,
+      image: post.image,
     }))
     .filter((post) => post.href);
 
@@ -317,13 +316,7 @@ export default function InstagramPosts({ projectSlug }) {
                   >
                     <span className="social-tile-media">
                       {post.image ? (
-                        <Image
-                          src={post.image}
-                          alt={post.alt || title}
-                          fill
-                          sizes="(max-width: 700px) 78vw, (max-width: 1100px) 33vw, 360px"
-                          priority={i === 0 && !projectSlug}
-                        />
+                        <SocialPostImage src={post.image} alt={post.alt || title} title={title} />
                       ) : (
                         <span className="social-tile-fallback">
                           <span className="social-tile-fallback-title">
@@ -366,6 +359,8 @@ export default function InstagramPosts({ projectSlug }) {
           </p>
         )}
       </div>
+    {!projectSlug && <SectionLink href="/instagram" label="Explore the studio journal" />}
     </section>
   );
 }
+

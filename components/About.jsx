@@ -1,3 +1,4 @@
+import SectionLink from "@/components/SectionLink";
 ﻿import Link from "next/link";
 import { about } from "@/lib/content";
 import DoodlePencil from "@/components/DoodlePencil";
@@ -65,7 +66,7 @@ export default function About() {
             </div>
           )}
           <div className="about-actions">
-            <Link href="/#enquire" className="about-primary-link">
+            <Link href="/enquire" className="about-primary-link">
               Tell me about your project <span aria-hidden="true">↗</span>
             </Link>
             <Link href="/work" className="about-secondary-link">
@@ -89,6 +90,7 @@ export default function About() {
           </div>
         </div>
       </div>
+    <SectionLink href="/about" label="Get to know the studio" />
     </section>
   );
 }

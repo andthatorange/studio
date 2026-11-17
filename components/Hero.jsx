@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="hero-stage hero-main">
           <h1 className="headline hero-title">{hero.sub}</h1>
           <div className="hero-actions">
-            <Link href="#enquire" className="btn hero-cta">
+            <Link href="/enquire" className="btn hero-cta">
               {hero.cta}
             </Link>
             <p className="hero-availability">

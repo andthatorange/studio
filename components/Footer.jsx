@@ -19,8 +19,8 @@ export default function Footer() {
               Thoughtful websites for the people, passions, and small businesses
               behind them.
             </p>
-            <Link href="/#enquire" className="footer-contact">
-              Tell me what you're dreaming of <span aria-hidden="true">↗</span>
+            <Link href="/enquire" className="footer-contact">
+              Tell me about your project <span aria-hidden="true">↗</span>
             </Link>
             <a className="footer-email" href={`mailto:${site.email}`}>
               {site.email}
@@ -36,6 +36,8 @@ export default function Footer() {
                 {item.label === "Work" ? "All projects" : item.label}
               </Link>
             ))}
+            <Link href="/instagram">Studio journal</Link>
+            <Link href="/reviews">Client reviews</Link>
           </nav>
           <div className="footer-links">
             <h3>Elsewhere</h3>

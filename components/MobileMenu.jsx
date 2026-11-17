@@ -28,7 +28,7 @@ export default function MobileMenu() {
       <summary aria-label="Open navigation menu"><span>Menu</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg></summary>
       <nav aria-label="Mobile navigation">
         {nav.map((item) => <Link key={item.href} href={item.href === "/#work" ? "/work" : item.href} onClick={() => ref.current?.removeAttribute("open")}>{item.label}<span aria-hidden="true">↗</span></Link>)}
-        <Link href="/#enquire" onClick={() => ref.current?.removeAttribute("open")}>Start an enquiry <span aria-hidden="true">↗</span></Link>
+        <Link href="/enquire" onClick={() => ref.current?.removeAttribute("open")}>Tell me about your project <span aria-hidden="true">↗</span></Link>
       </nav>
     </details>
   );

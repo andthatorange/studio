@@ -59,7 +59,7 @@ export default function AllProjects() {
           <p className="archive-eyebrow">Room for one more story</p>
           <h2>What does your<br /><span>little world look like?</span></h2>
           <p>Let's make a website that feels like you.</p>
-          <Link href="/#enquire" className="archive-enquire">Tell me about it <span aria-hidden="true">↗</span></Link>
+          <Link href="/enquire" className="archive-enquire">Tell me about your project <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
     </div>

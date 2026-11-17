@@ -1,10 +1,9 @@
-"use client";
+﻿"use client";
 import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import { packages, formOptions, enquire } from "@/lib/content";
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 // Defined outside the form so inputs keep their values when errors appear
 function Field({ name, label, error, children }) {
@@ -45,7 +44,7 @@ export default function EnquiryForm() {
     const data = Object.fromEntries(new FormData(formRef.current));
     data.packageName = packages.find((p) => p.id === data.package)?.name || "";
     try {
-      const res = await fetch(`${API_URL}/api/enquire`, {
+      const res = await fetch("/api/enquire", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -59,6 +58,7 @@ export default function EnquiryForm() {
     } catch {
       setMessage("Could not reach the server. Check your connection and try again.");
       setStatus("error");
+      window.turnstile?.reset();
     }
   }
 

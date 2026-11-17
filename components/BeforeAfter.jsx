@@ -1,3 +1,4 @@
+import SectionLink from "@/components/SectionLink";
 ﻿import { beforeAfter } from "@/lib/content";
 
 export default function BeforeAfter() {
@@ -36,6 +37,7 @@ export default function BeforeAfter() {
           </div>
         </div>
       </div>
+    <SectionLink href="/process" label="See how we work together" />
     </section>
   );
 }
